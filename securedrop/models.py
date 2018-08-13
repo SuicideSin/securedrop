@@ -244,6 +244,7 @@ class Reply(db.Model):
             'filename': self.filename,
             'size': self.size,
             'journalist_username': self.journalist.username,
+            'journalist_uuid': self.journalist.uuid,
             'uuid': self.uuid,
             'is_deleted_by_source': self.deleted_by_source,
         }
@@ -320,6 +321,7 @@ class NonDicewarePassword(PasswordError):
 class Journalist(db.Model):
     __tablename__ = "journalists"
     id = Column(Integer, primary_key=True)
+    uuid = Column(String(36), unique=True, nullable=False)
     username = Column(String(255), nullable=False, unique=True)
     pw_salt = Column(Binary(32))
     pw_hash = Column(Binary(256))
@@ -344,6 +346,7 @@ class Journalist(db.Model):
         self.username = username
         self.set_password(password)
         self.is_admin = is_admin
+        self.uuid = str(uuid.uuid4())
 
         if otp_secret:
             self.set_hotp_secret(otp_secret)
