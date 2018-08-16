@@ -138,7 +138,8 @@ combination with an authenticator application that implements
 `oathtool <http://www.nongnu.org/oath-toolkit/oathtool.1.html>`__
 (command line tool, multiple platforms).
 
-If you use oathtool, the TOTP secret is in base32, so you'll need to run ``oathtool -b --totp "JHCO GO7V CER3 EJ4L"``
+If you use oathtool, the TOTP secret is in base32, so you'll need to run
+``oathtool -b --totp "JHCO GO7V CER3 EJ4L"``
 
 Or, for apps that support it, you can simply scan the following QR code:
 
