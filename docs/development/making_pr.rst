@@ -94,8 +94,8 @@ would be:
     D---E---F---G develop
 
 .. note::
-  :code:`A` and :code:`A` represents the same set of changes, but have
-  different committer information. 
+  ``A`` and ``A``` represent the same set of changes, but have
+  different commit history and commit ID numbers.
 
 Pushing the Changes to GitHub Fork
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
